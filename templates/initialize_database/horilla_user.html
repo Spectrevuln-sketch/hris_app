@@ -62,7 +62,7 @@
           class="oh-onboarding-card"
           style="max-height: 790px; max-width: 975px"
           id="ohAuthCard"
-          >
+        >
           <div class="oh-onboarding-card__header">
             <span class="oh-onboarding-card__company-name">Horilla HRMS</span>
             <ul class="oh-onboarding-card__steps">
@@ -96,7 +96,8 @@
             {% trans "Database Authentication" %}
           </h1>
           <p class="text-muted text-center">
-            {% trans "Authenticate with your password to initialize the Horilla HRMS database." %}
+            {% trans "Authenticate with your password to initialize the Horilla
+            HRMS database." %}
           </p>
           <form
             hx-post="{% url 'initialize-database' %}"
@@ -122,7 +123,7 @@
                     <button
                       type="button"
                       class="oh-btn oh-btn--transparent oh-password-input--toggle"
-                      >
+                    >
                       <ion-icon
                         class="oh-passowrd-input__show-icon"
                         title="Show Password"
@@ -150,7 +151,9 @@
             </div>
           </form>
         </div>
-        <img src={% if white_label_company.icon %} "{{white_label_company.icon.url}}" {% else %} "{% static 'images/ui/auth-logo.png' %}" {% endif %} alt="Horilla" />
+        <img src={% if white_label_company.icon %}
+        "{{white_label_company.icon.url}}" {% else %} "{% static
+        'images/ui/aka-tech-logo.png' %}" {% endif %} alt="Horilla" />
       </main>
     </div>
     <script src="{% static '/build/js/web.frontend.min.js' %}"></script>

@@ -32,20 +32,12 @@
     >
       {% csrf_token %}
       <div class="oh-input-group">
-        <label class="oh-label" for=""
-          >{% trans "Old  Username" %}</label
-        >
-        <div class="oh-password-input-container">
-          {{form.old_username}}
-        </div>
+        <label class="oh-label" for="">{% trans "Old Username" %}</label>
+        <div class="oh-password-input-container">{{form.old_username}}</div>
       </div>
       <div class="oh-input-group">
-        <label class="oh-label" for="username"
-          >{% trans "Username" %}</label
-        >
-        <div class="oh-password-input-container">
-          {{form.username}}
-        </div>
+        <label class="oh-label" for="username">{% trans "Username" %}</label>
+        <div class="oh-password-input-container">{{form.username}}</div>
       </div>
       {{form.username.errors}}
       <div class="oh-input-group">
@@ -87,8 +79,7 @@
       >
     </form>
   </div>
-  <img
-    src={% if white_label_company.icon %}"{{white_label_company.icon.url}}" {% else %} "{% static 'images/ui/auth-logo.png' %}" {% endif %}
-    alt="Horilla"
-  />
+  <img src={% if white_label_company.icon %}"{{white_label_company.icon.url}}"
+  {% else %} "{% static 'images/ui/aka-tech-logo.png' %}" {% endif %}
+  alt="Horilla" />
 </main>

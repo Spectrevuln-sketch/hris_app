@@ -30,7 +30,8 @@ env = environ.Env(
         "django-insecure-j8op9)1q8$1&0^s&p*_0%d#pr@w9qj@1o=3#@d=a(^@9@zd@%j",
     ),
     ALLOWED_HOSTS=(list, ["*"]),
-    CSRF_TRUSTED_ORIGINS=(list, ["http://localhost:8000"]),
+    CSRF_TRUSTED_ORIGINS=(list, [f"http://localhost:8000"]),
+    PORT=(int, 8777),
 )
 
 env.read_env(os.path.join(BASE_DIR, ".env"), overwrite=True)
@@ -42,6 +43,8 @@ SECRET_KEY = env("SECRET_KEY")
 DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = env("ALLOWED_HOSTS")
+PORT = env("PORT")
+
 
 # Application definition
 
