@@ -1,19 +1,20 @@
-version: "3.9"
-
 services:
-  app:
+  server:
     build:
       context: .
+      dockerfile: Dockerfile
     ports:
-      - "8777:8777"
-    volumes:
-      - .:/app
-    # command: >
-    #   sh -c "python manage.py makemigrations &&
-    #          python manage.py migrate &&
-    #          python manage.py runserver 0.0.0.0:8000"
+      - 8777:8777
+    restart: always
+    # environment:
+    #   DATABASE_URL: "postgres://postgres:postgres@db:5432/horilla"
     env_file:
       - .env
+    # command: sh ./entrypoint.sh
+    volumes:
+      - ./:/app
+      # - ./horilla:/app/horilla
+      # - ./media:/app/media
     networks:
       - postgres15-network
 networks:
