@@ -36,7 +36,7 @@ from django.http import (
     JsonResponse,
 )
 from django.shortcuts import get_object_or_404, redirect, render
-from django.template.loader import render_to_string
+from django.template.loader import render_to_string, get_template
 from django.urls import reverse, reverse_lazy
 from django.utils import timezone
 from django.utils.html import strip_tags
@@ -616,7 +616,8 @@ def login_user(request):
         if params:
             next_url += f"?{params}"
         return redirect(next_url)
-
+    template = get_template("login.html")
+    print("Template path:", template.origin)
     return render(
         request, "login.html", {"initialize_database": initialize_database_condition()}
     )

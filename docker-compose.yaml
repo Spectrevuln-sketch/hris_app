@@ -10,7 +10,7 @@ services:
     #   DATABASE_URL: "postgres://postgres:postgres@db:5432/horilla"
     env_file:
       - .env
-    # command: sh ./entrypoint.sh
+    command: sh ./entrypoint.sh
     volumes:
       - ./:/app
       # - ./horilla:/app/horilla

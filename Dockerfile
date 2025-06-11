@@ -8,11 +8,12 @@ WORKDIR /app/
 
 COPY . .
 
-RUN dos2unix /app/entrypoint.sh && chmod +x /app/entrypoint.sh
+# Convert all files to LF to avoid \r issues
+RUN find . -type f \( -name "*.html" -o -name "*.py" -o -name "*.sh" \) -exec dos2unix {} \; \
+  && chmod +x /app/entrypoint.sh
 
 RUN pip install -r requirements.txt
 
 EXPOSE 8777
 
-# CMD ["python3", "manage.py", "runserver"]
-CMD ["./entrypoint.sh"]
+# CMD ["sh", "/app/entrypoint.sh"]
