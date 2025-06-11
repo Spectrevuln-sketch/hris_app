@@ -12798,7 +12798,7 @@ msgid "{} not found."
 msgstr "{} غير معثور عليه."
 
 #: .\base\views.py:1419
-msgid "Test mail from Horilla"
+msgid "Test mail from AKA HRMS"
 msgstr ""
 
 #: .\base\views.py:1476

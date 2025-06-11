@@ -186,6 +186,10 @@ MESSAGE_TAGS = {
     messages.ERROR: "oh-alert--danger",
 }
 
+if isinstance(env("CSRF_TRUSTED_ORIGINS"), str):
+    CSRF_TRUSTED_ORIGINS = [x.strip() for x in env("CSRF_TRUSTED_ORIGINS").split(",") if x.strip()]
+else:
+    CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 
 CSRF_TRUSTED_ORIGINS = env("CSRF_TRUSTED_ORIGINS")
 
